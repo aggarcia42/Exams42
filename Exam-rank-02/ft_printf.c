@@ -100,9 +100,9 @@ int ft_int(long int format, int space, int zero, int len)
         else if(size < zero)
         {
             space = space - zero;
-        }
+	}
+	    len += ft_putchar(' ', space);
     }
-    len += ft_putchar(' ', space);
     if(negative == -1)
     {
         len+= ft_putchar('-', 1);
