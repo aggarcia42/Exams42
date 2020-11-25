@@ -65,7 +65,7 @@ char *ft_substr(char *s, int start, int len)
 	int i = 0;
 	char *str;
 	if (!(str = malloc(len + 1)))
-		return (0)	
+		return (0);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
 	while (s[i])
