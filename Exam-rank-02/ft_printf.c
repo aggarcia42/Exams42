@@ -76,7 +76,7 @@ int ft_int(long int format, int space, int zero, int len)
 {
     int size = 0;
     int negative = 0;
-    if(negative < 0)
+    if(format < 0)
     {
         format *= -1;
         space += -1;
