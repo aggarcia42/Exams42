@@ -76,7 +76,7 @@ int ft_int(long int format, int space, int zero, int len)
 {
     int size = 0;
     int negative = 0;
-    if(negative < 0)
+    if(format < 0)
     {
         format *= -1;
         space += -1;
@@ -102,7 +102,6 @@ int ft_int(long int format, int space, int zero, int len)
             len += ft_putchar(' ', space - zero);
         }
     }
-    len += ft_putchar(' ', space);
     if(negative == -1)
     {
         len+= ft_putchar('-', 1);
@@ -163,10 +162,15 @@ int ft_hex(unsigned int format, int space, int zero, int len)
         }
         else if(size < zero)
         {
+<<<<<<< HEAD
             len += ft_putchar(' ', space - zero);
         }
+=======
+            space = space - zero;
+	}
+	    len += ft_putchar(' ', space);
+>>>>>>> 1e2cb6f73b647cb126d87b748ae9e66eea9d41ea
     }
-    len += ft_putchar(' ', space);
     len += ft_putchar('0', zero -size);
     len += ft_putstr(str, size);
     return len;
