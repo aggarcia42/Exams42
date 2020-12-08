@@ -95,11 +95,11 @@ int ft_int(long int format, int space, int zero, int len)
     {
         if(size >= zero)
         {
-            space = space - size;
+            len += ft_putchar(' ', space - size);
         }
         else if(size < zero)
         {
-            space = space - zero;
+            len += ft_putchar(' ', space - zero);
         }
     }
     len += ft_putchar(' ', space);
@@ -159,11 +159,11 @@ int ft_hex(unsigned int format, int space, int zero, int len)
     {
         if(size >= zero)
         {
-            space = space - size;
+            len += ft_putchar(' ', space - size);
         }
         else if(size < zero)
         {
-            space = space - zero;
+            len += ft_putchar(' ', space - zero);
         }
     }
     len += ft_putchar(' ', space);
