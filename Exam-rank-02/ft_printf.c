@@ -83,6 +83,10 @@ int ft_int(long int format, int space, int zero, int len)
         negative = -1;
     }
     char *str = ft_itoa(format);
+    if(str == NULL)
+    {
+        return 0;
+    }
     while (str[size])
     {
         size++;
@@ -108,6 +112,7 @@ int ft_int(long int format, int space, int zero, int len)
     }
     len += ft_putchar('0', zero -size);
     len += ft_putstr(str, size);
+    free(str);
     return len;
 }
 //end d//
@@ -146,6 +151,10 @@ int ft_hex(unsigned int format, int space, int zero, int len)
 {
     int size = 0;
     char *str = ft_unsigneditoa(format);
+    if(str == NULL)
+    {
+        return 0;
+    }
     while (str[size])
     {
         size++;
@@ -167,6 +176,7 @@ int ft_hex(unsigned int format, int space, int zero, int len)
     }
     len += ft_putchar('0', zero -size);
     len += ft_putstr(str, size);
+    free(str);
     return len;
 }
 //end x//
