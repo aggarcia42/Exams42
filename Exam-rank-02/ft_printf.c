@@ -61,7 +61,7 @@ char *ft_itoa(long int number)
     }
     if(!(str = malloc(len + 1)))
     {
-        return 0;
+        return NULL;
     }
     str[len] = '\0';
     while (len--)
@@ -129,7 +129,7 @@ char *ft_unsigneditoa(unsigned int number)
     }
     if(!(str = malloc(len + 1)))
     {
-        return 0;
+        return NULL;
     }
     str[len] = '\0';
     while (len--)
