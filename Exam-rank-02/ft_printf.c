@@ -85,6 +85,7 @@ int ft_int(long int format, int space, int zero, int len)
     char *str = ft_itoa(format);
     if(str == NULL)
     {
+	free(str);
         return 0;
     }
     while (str[size])
@@ -153,6 +154,7 @@ int ft_hex(unsigned int format, int space, int zero, int len)
     char *str = ft_unsigneditoa(format);
     if(str == NULL)
     {
+	free(str);
         return 0;
     }
     while (str[size])
