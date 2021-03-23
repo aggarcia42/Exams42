@@ -61,7 +61,7 @@ char *ft_itoa(long int number)
     }
     if(!(str = malloc(len + 1)))
     {
-        return 0;
+        return NULL;
     }
     str[len] = '\0';
     while (len--)
@@ -83,6 +83,11 @@ int ft_int(long int format, int space, int zero, int len)
         negative = -1;
     }
     char *str = ft_itoa(format);
+    if(str == NULL)
+    {
+	free(str);
+        return 0;
+    }
     while (str[size])
     {
         size++;
@@ -108,6 +113,7 @@ int ft_int(long int format, int space, int zero, int len)
     }
     len += ft_putchar('0', zero -size);
     len += ft_putstr(str, size);
+    free(str);
     return len;
 }
 //end d//
@@ -124,7 +130,7 @@ char *ft_unsigneditoa(unsigned int number)
     }
     if(!(str = malloc(len + 1)))
     {
-        return 0;
+        return NULL;
     }
     str[len] = '\0';
     while (len--)
@@ -146,6 +152,11 @@ int ft_hex(unsigned int format, int space, int zero, int len)
 {
     int size = 0;
     char *str = ft_unsigneditoa(format);
+    if(str == NULL)
+    {
+	free(str);
+        return 0;
+    }
     while (str[size])
     {
         size++;
@@ -167,6 +178,7 @@ int ft_hex(unsigned int format, int space, int zero, int len)
     }
     len += ft_putchar('0', zero -size);
     len += ft_putstr(str, size);
+    free(str);
     return len;
 }
 //end x//
