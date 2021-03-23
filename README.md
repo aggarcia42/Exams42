@@ -6,4 +6,7 @@ Exam-Rank-02
 -Union : Works
 -Inter : Works
 -get_next_line : works
--ft_printf : not sure yet but matches with original printf
+-ft_printf : works
+
+Exam-Rank-03
+-In progress..
